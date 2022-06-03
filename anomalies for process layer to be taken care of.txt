@@ -1,0 +1,40 @@
+EDI 852 4010 Inbound       
+
+
+line no:33(xslt)    
+
+ <ebo:BatchNumber>//(to be taken care by the process layer)//Previously considered as Anomaly but have been mapped
+ <xsl:value-of select="$gvar_ICNNumber/ns1:parameters/ns1:ParamFilename/ns1:value"/>
+ </ebo:BatchNumber>
+
+
+
+
+
+
+line no:45 (xslt) 
+
+<ebo:CustomerName>//(ignore)(no value in edi file too)//Previously considered as Anomaly but have been mapped
+ <xsl:value-of select="/ns0:Transaction-852/ns0:Internal-Properties/ns0:Data-Structure[@Name ='Interchange']/ns0:Property[@Name ='TPName']"/>
+ </ebo:CustomerName>
+
+
+
+Need to check whether these are also anomalies
+
+
+
+line no 75
+<ItemNumber>//values may or may not be there but we can map this if we understand the condition
+IT needs property value
+//Previously considered as Anomaly but have been mapped
+
+<DataSourceCode>not found in xslt file but there in output xml file only(not mapped)(not in output metadata also)
+
+
+<ReferenceType>not found in xslt file but there in output xml file only(not mapped)(not in output metadata also)
+
+
+
+LINE NO 159(NOT SURE but we have mapped)
+<UPCCode>NO VALID ELEMENT OR VALUE AVAILABLE TO MAP//not found in edi so its okay
